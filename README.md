@@ -1,9 +1,14 @@
-# Physical Shooting Game with Arduino Nano
+# Physical Shooting Game 
+<small> with Arduino Nano </small>
 
 ## Table of Contents 
 
 - [Motivation](#motivation)
 - [What we need](#what-we-need)
+- [Wiring - Target](#wiring---target)
+- [Code](#code)
+- [Adjust threshold](#adjust-threshold)
+- 
 
 ---
 ## Motivation
@@ -172,13 +177,47 @@ int offThr = 128;  // if larger than this, target is reset (= ready to get shot)
 ```
 
 
+---
+## Make Target
 
+Bend the legs of the photoresistor slowly so that 
+it directs front, so that it is easier to install the target 
+on the wall. 
 
+![bend](./images/bend-1.jpg)
+
+To increase the size of the target, we use aluminum tape. 
+Just like you make pleats the edges of [gyoza](
+https://en.wikipedia.org/wiki/Jiaozi).
+
+![gyoza](./images/gyoza-1.jpg)
+
+Make sure that the aluminum tape does not short the photoresistor!
+
+![short](./images/short-1.jpg)
 
 ---
 ## Wiring - Pistol
 
+![pistol](./images/pistol-1.jpg)
 
+The red laser works with 5V input.
+
+[Glock](https://de.wikipedia.org/wiki/Glock-Pistole) model. 
+
+![glock](./images/glock-1.jpg)
+
+Put the laster inside the cardboard housing. 
+
+![basteln](./images/basteln-1.gif)
+
+Worked. 
+
+Test shooting. 
+
+![test](./images/shoot-1.gif)
+
+Satisfied. 
 
 ---
 # END

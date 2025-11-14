@@ -128,8 +128,8 @@ void setup(){
 void loop(){
   // read the LDR and average the signal
   int v = readA0Avg();
-  // uncomment to measure the anbient light. 
-  Serial.println(v);  
+  // uncomment the following line to measure the ambient light. 
+//  Serial.println(v);  
 
   // current beam state.
   if(!beamOn && v < onThr)  beamOn = true;   // hit
