@@ -1,4 +1,4 @@
-˚# Physical Shooting Game 
+# Physical Shooting Game 
 <small> with Arduino Nano </small>
 
 ## Table of Contents 
