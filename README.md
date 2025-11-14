@@ -1,4 +1,4 @@
-# Physical Shooting Game 
+˚# Physical Shooting Game 
 <small> with Arduino Nano </small>
 
 ## Table of Contents 
@@ -8,8 +8,10 @@
 - [Wiring - Target](#wiring---target)
 - [Code](#code)
 - [Adjust threshold](#adjust-threshold)
-- 
+- [Make Target](#make-target)
+- [Wiring - Pistol](#wiring---pistol)
 
+![test](./images/shoot-1.gif)
 ---
 ## Motivation
 
