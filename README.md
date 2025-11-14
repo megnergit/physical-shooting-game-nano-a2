@@ -15,13 +15,11 @@
 ---
 ## Motivation
 
-One day I saw this [web page](https://www.gizmodo.jp/2024/10/machi-ya-varishot-review_repost-796522.html) on GIZMODO, reporting a physical shooting game with physical target and toy pistols with a laser pointer installed inside. It reminds me of my enthusiasm on chopsticks guns [(somethign like this)](https://blog.cfms.jp/?p=10323) with rubber bands. I was not interested in shooting 'enemy' 
-or anything that moves. I was not interested in any battles either (affirmatively hate them), but was purely interested in shooting a target. I was and still am fascinated in the precision of a mechanism. 
+I saw this [web page](https://www.gizmodo.jp/2024/10/machi-ya-varishot-review_repost-796522.html) on GIZMODO, reporting a physical shooting game. The toy includes a physical target and laser-pointer toy-pistols. It reminds me of my enthusiasm in childhood on a chopsticks gun with rubber bands [(somethign like this)](https://blog.cfms.jp/?p=10323). I am not interested in shooting 'enemies' or in any battles (I affirmatively dislike them), but was purely interested in shooting a target. I was and still am fascinated in the precision of a mechanism. 
 
-This 'VariShot' is quite expensive. In Europa it costs over 600 Euros. I can imagine, importing such toys will require a tons of explanations at a Zollamt. 
+This 'VariShot' is quite expensive. In Europa it costs over 600 Euros. I can imagine, importing such a toy will require a lot of explanations at a Zollamt. 
 
-Okay, let us create one. 
-
+Okay, let us make one. 
 
 ---
 ## What we need
@@ -30,13 +28,13 @@ For a target,
 
 - Arduino Nano
 - USB mini-B (to write code on Arduino Nano)
-- photoresistor (LDR: Light Dependent Resistor) 
+- photoresistor (=LDR: Light Dependent Resistor) 
 - LED
 - active speaker
-- Resistor (220 Ω. For LED)
-p- Resistor (10 kΩ. For photoresistor)
+- Resistor (220 Ω for LED)
+- Resistor (10 kΩ for photoresistor)
 - wires and pins
-- Aluminum tape (to make a physical target)
+- Aluminum tape (for a physical target)
 
 For a pistol
 - red laser
@@ -61,9 +59,7 @@ Connect the signal lines as follows.
 | active speaker  | D9 | 
 | LED             | D8 |
 
-For the photoresistor, make sure to insert 10 kΩ between the 
-signal line and the ground. The left most column of the breadboard 
-in the picture was used to connect LDR 'S' and 10 kΩ.
+For the photoresistor, make sure to insert 10 kΩ between the signal line ('S') and the ground. The left most column of the breadboard in the picture was used to connect 'S' of the LDR  and 10 kΩ.
 
 ```sh
     5V
@@ -119,10 +115,9 @@ $ tree . -L 2
 $
 ```
 
-Upload the code ```nano_shooting.ino```. 
+Upload the code ```nano_shooting.ino``` to Arduino Nano.
 
-**Note** The board, port and processor settings are as follows. 
-The port will be different from yours. 
+**Note** The board, port and processor settings are as follows. The port will be different from yours. 
 
 |                 |              |             | 
 |-----------------|--------------| ------------|
@@ -132,8 +127,7 @@ The port will be different from yours.
 
 ![board settings](./images/board-1.png)
 
-In case  you got this kind of error message, press the reset button 
-on Nano (small white rectangular button in the middle).
+In case  you got this kind of error message, press the reset button on Nano (small white rectangular button in the middle).
 
 ```sh
 Sketch uses 3984 bytes (12%) of program storage space. Maximum is 30720 bytes.
@@ -147,15 +141,11 @@ Failed uploading: uploading error: exit status 1
 ---
 ## Adjust threshold
 
-The photoresistor outputs an analog signal between 0 and 1023, 
-the brighter the light it receives, the smaller the signal. 
+The photoresistor outputs an analog signal between 0 and 1023. The brighter the light it receives, the smaller the signal. 
 
-To avoid the speaker and the LED being activated with ambient light, 
-we have to set the threshold correctly. 
+To avoid the speaker and the LED being activated with the ambient light, we have to set the threshold correctly. 
 
-Uncomment the line ```Serial.println(v);``` and upload the code 
-again. Open serial monitor and measure the ambient brightness, 
-and the hit brightness (use your laser point to illuminate the photoresistor). 
+Uncomment the line ```Serial.println(v);``` and upload the code again. Open serial monitor and measure the ambient brightness, and the brightness when the target was hit (use any laser point to illuminate the photoresistor). 
 
 
 ```cpp
@@ -178,19 +168,14 @@ int offThr = 128;  // if larger than this, target is reset (= ready to get shot)
 ...
 ```
 
-
 ---
 ## Make Target
 
-Bend the legs of the photoresistor slowly so that 
-it directs front, so that it is easier to install the target 
-on the wall. 
+Bend the legs of the photoresistor slowly so that it directs front. It is easier  to install the target on the wall in this way. 
 
 ![bend](./images/bend-1.jpg)
 
-To increase the size of the target, we use aluminum tape. 
-Just like you make pleats the edges of [gyoza](
-https://en.wikipedia.org/wiki/Jiaozi).
+To increase the size of the target, we use aluminum tape. Just like you make pleats the edges of [gyoza](https://en.wikipedia.org/wiki/Jiaozi).
 
 ![gyoza](./images/gyoza-1.jpg)
 
